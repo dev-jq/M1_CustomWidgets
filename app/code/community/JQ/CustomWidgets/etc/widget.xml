@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<widgets>
+
+  <!-- My first widget -->
+  <!-- 
+      unique identifier: 'customwidgets_links' 
+      'type' attribute is used to map the name of the widget file /Block/Widget/Links.php
+  -->
+  <customwidgets_links type="customwidgets/widget_links" translate="name description" module="customwidgets">
+    <name>Print and Inquiry Options</name>
+    <description>Allows to add Print and Inquiry link options</description>
+    <parameters>
+      <link_options>
+        <label>Link Options</label>
+        <visible>1</visible>
+        <required>1</required>
+        <type>multiselect</type>
+        <!-- 'source_model' tag maps to the model file /Model/Options.php -->
+        <source_model>customwidgets/options</source_model>
+      </link_options>
+    </parameters>
+  </customwidgets_links>
+
+</widgets>

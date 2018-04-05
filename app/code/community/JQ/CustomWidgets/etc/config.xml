@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <JQ_CustomWidgets>
+      <version>0.0.1</version>
+    </JQ_CustomWidgets>
+  </modules>
+  <global>
+    <helpers>
+      <customwidgets>
+        <class>JQ_CustomWidgets_Helper</class>
+      </customwidgets>
+    </helpers>
+    <blocks>
+      <customwidgets>
+        <class>JQ_CustomWidgets_Block</class>
+      </customwidgets>
+    </blocks>
+    <models>
+      <customwidgets>
+        <class>JQ_CustomWidgets_Model</class>
+      </customwidgets>
+    </models>
+  </global>
+</config>
