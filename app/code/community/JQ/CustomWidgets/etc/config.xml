@@ -2,7 +2,7 @@
 <config>
   <modules>
     <JQ_CustomWidgets>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </JQ_CustomWidgets>
   </modules>
   <global>
@@ -16,10 +16,16 @@
         <class>JQ_CustomWidgets_Block</class>
       </customwidgets>
     </blocks>
-    <models>
-      <customwidgets>
-        <class>JQ_CustomWidgets_Model</class>
-      </customwidgets>
-    </models>
   </global>
+  <adminhtml>
+      <translate>
+          <modules>
+              <JQ_CustomWidgets>
+                  <files>
+                      <default>JQ_CustomWidgets.csv</default>
+                  </files>
+              </JQ_CustomWidgets>
+          </modules>
+      </translate>
+  </adminhtml>
 </config>
