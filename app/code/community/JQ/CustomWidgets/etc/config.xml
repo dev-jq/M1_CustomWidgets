@@ -17,6 +17,17 @@
       </customwidgets>
     </blocks>
   </global>
+  <frontend>
+        <translate>
+            <modules>
+                <JQ_CustomWidgets>
+                    <files>
+                        <default>JQ_CustomWidgets.csv</default>
+                    </files>
+                </JQ_CustomWidgets>
+            </modules>
+        </translate>
+    </frontend>
   <adminhtml>
       <translate>
           <modules>

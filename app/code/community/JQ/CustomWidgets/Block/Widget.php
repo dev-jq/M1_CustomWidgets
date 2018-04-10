@@ -1,7 +1,7 @@
 <?php
 
-class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Abstract implements Mage_Widget_Block_Interface {
-
+class JQ_CustomWidgets_Block_Widget extends Mage_Core_Block_Template implements Mage_Widget_Block_Interface
+{
     public function getRecentSize(){ 
         return $this->getData('recent_size');
     }

@@ -58,6 +58,6 @@ class JQ_CustomWidgets_Block_Widget_Youtubevideo extends Mage_Core_Block_Templat
 
     protected function _toHtml()
     {
-        return $this->getCode() ? parent::_toHtml() : '';
+       return $this->getCode() ? parent::_toHtml() : '';
     }
 }

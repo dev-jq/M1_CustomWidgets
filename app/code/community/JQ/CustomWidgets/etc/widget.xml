@@ -1,46 +1,5 @@
 <?xml version="1.0"?>
 <widgets>
-  
-  <customwidgets_recentreviews type="customwidgets/widget_recentreviews" translate="name description" module="customwidgets">
-    <name>Recent Reviews</name>
-    <description>Show recent reviewed product</description>
-    <parameters>
-      <recent_size>
-        <label>Number of Products to display</label>
-        <visible>1</visible>
-        <required>1</required>
-        <value>2</value>
-        <type>text</type>
-      </recent_size>
-      <image_width>
-        <label>Product image width (px)</label>
-        <visible>1</visible>
-        <required>1</required>
-        <value>100</value>
-        <type>text</type>
-      </image_width>
-      <image_height>
-        <label>Product image height (px)</label>
-        <visible>1</visible>
-        <required>1</required>
-        <value>100</value>
-        <type>text</type>
-      </image_height>
-      <template>
-        <required>1</required>
-        <visible>1</visible>
-        <label>Template</label>
-        <type>select</type>
-        <value>customwidgets/recent_reviews_grid.phtml</value>
-        <values>
-            <default translate="label">
-                <value>customwidgets/recent_reviews_grid.phtml</value>
-                <label>Responsive Iframe Template</label>
-            </default>
-        </values>
-      </template>
-    </parameters>
-  </customwidgets_recentreviews>
 
   <customwidgets_youtubevideo type="customwidgets/widget_youtubevideo" module="customwidgets" translate="name description">
         <name>Youtube Video</name>
@@ -187,5 +146,145 @@
             </template>
         </parameters>
     </customwidgets_vimeovideo>
+
+    <!-- <lol type="customwidgets/recentreviews" module="customwidgets" translate="name description">
+        <name>Recent Reviews</name>
+        <description>Show recent reviewed product</description>
+        <parameters>
+          <recent_size>
+            <label>Number of Products to display</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>2</value>
+            <type>text</type>
+          </recent_size>
+          <image_width>
+            <label>Product image width (px)</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>100</value>
+            <type>text</type>
+          </image_width>
+          <image_height>
+            <label>Product image height (px)</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>100</value>
+            <type>text</type>
+          </image_height>
+      </parameters>
+    </lol> -->
+
+  <!-- <recentreview type="customwidgets/widget" translate="name description" module="customwidgets">
+      <name>Recent Reviews Products</name>
+      <description type="desc">Show recent reviewed product</description>
+      <parameters>
+          <display_mode translate="label">
+              <visible>1</visible>
+              <label>Mode</label>
+              <type>select</type>
+              <values>
+                  <default translate="label">
+                      <value>0</value>
+                      <label>Recent reviewed in active category</label>
+                  </default>
+                  <all translate="label">
+                      <value>1</value>
+                      <label>Recent reviewed in whole shop</label>
+                  </all>
+              </values>
+          </display_mode>
+          <recent_size>
+            <label>Number of Products to display</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>2</value>
+            <type>text</type>
+          </recent_size>
+          <image_width>
+            <label>Product image width (px)</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>100</value>
+            <type>text</type>
+          </image_width>
+          <image_height>
+            <label>Product image height (px)</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>100</value>
+            <type>text</type>
+          </image_height>
+          <template>
+            <required>1</required>
+            <visible>1</visible>
+            <label>Template</label>
+            <type>select</type>
+            <value>customwidgets/widget.phtml</value>
+            <values>
+                <default translate="label">
+                    <value>customwidgets/widget.phtml</value>
+                    <label>Recent Reviewed Template</label>
+                </default>
+            </values>
+          </template>
+      </parameters>
+  </recentreview> -->
+
+  <recentreview type="customwidgets/widget_recentreviews" translate="name description" module="customwidgets">
+      <name>Recent Reviews Products aa</name>
+      <description type="desc">Show recent reviewed product</description>
+      <parameters>
+          <display_mode translate="label">
+              <visible>1</visible>
+              <label>Mode</label>
+              <type>select</type>
+              <values>
+                  <default translate="label">
+                      <value>0</value>
+                      <label>Recent reviewed in active category</label>
+                  </default>
+                  <all translate="label">
+                      <value>1</value>
+                      <label>Recent reviewed in whole shop</label>
+                  </all>
+              </values>
+          </display_mode>
+          <recent_size>
+            <label>Number of Products to display</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>2</value>
+            <type>text</type>
+          </recent_size>
+          <image_width>
+            <label>Product image width (px)</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>100</value>
+            <type>text</type>
+          </image_width>
+          <image_height>
+            <label>Product image height (px)</label>
+            <visible>1</visible>
+            <required>1</required>
+            <value>100</value>
+            <type>text</type>
+          </image_height>
+          <template>
+            <required>1</required>
+            <visible>1</visible>
+            <label>Template</label>
+            <type>select</type>
+            <value>customwidgets/recentreviews.phtml</value>
+            <values>
+                <default translate="label">
+                    <value>customwidgets/recentreviews.phtml</value>
+                    <label>Recent Reviewed Template</label>
+                </default>
+            </values>
+          </template>
+      </parameters>
+  </recentreview>
 
 </widgets>
