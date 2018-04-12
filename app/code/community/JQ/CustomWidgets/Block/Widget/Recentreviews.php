@@ -1,6 +1,6 @@
 <?php
 
-class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Abstract implements Mage_Widget_Block_Interface {
+class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Template implements Mage_Widget_Block_Interface {
 
     public function getRecentSize(){ 
         return $this->getData('recent_size');
@@ -40,7 +40,7 @@ class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Abstra
             ->getResourceCollection()
             ->addStoreFilter(Mage::app()->getStore()->getId())
             ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED)
-            ->setDateOrder('desc')
+            ->setDateOrder('DESC')
             ->addRateVotes();
         foreach($allReviews as $review) {
             $productsIds[] = $review->getEntityPkValue();
@@ -53,6 +53,8 @@ class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Abstra
             ->addAttributeToFilter('entity_id', array('in' => $finallyProductsIds))
             ->addCategoryFilter($current_category)
             ->addUrlRewrite();
+
+        $products->getSelect()->order(new Zend_Db_Expr('FIELD(e.entity_id, ' . implode(',', $finallyProductsIds).')'));
         return $products;
     }
 
@@ -63,7 +65,7 @@ class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Abstra
             ->getResourceCollection()
             ->addStoreFilter(Mage::app()->getStore()->getId())
             ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED)
-            ->setDateOrder('desc')
+            ->setDateOrder('DESC')
             ->addRateVotes();
         foreach($allReviews as $review) {
             $productsIds[] = $review->getEntityPkValue();
@@ -75,6 +77,8 @@ class JQ_CustomWidgets_Block_Widget_Recentreviews extends Mage_Core_Block_Abstra
             ->addAttributeToSelect('*')
             ->addAttributeToFilter('entity_id', array('in' => $finallyProductsIds))
             ->addUrlRewrite();
+
+        $products->getSelect()->order(new Zend_Db_Expr('FIELD(e.entity_id, ' . implode(',', $finallyProductsIds).')'));
         return $products;
     }
 }

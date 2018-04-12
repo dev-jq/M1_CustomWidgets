@@ -2,9 +2,8 @@
 <?php if($products == null) return ?>
 
 <?php if($products->count() > 0): ?>
-
-<div class="block last-reviewed">
-    <div class="block-title">LOL!!
+<div id="last-reviewed-products" class="block last-reviewed">
+    <div class="block-title">
         <strong><span><?php echo $this->__("Last Reviewed"); ?></span></strong>
     </div>
     <div class="block-content">
@@ -19,59 +18,51 @@
                             $ratings[] = $_vote->getPercent();
                         endforeach;
                     if(count($ratings) > 0) {
-                    	$avg = array_sum($ratings)/count($ratings);
+                        $avg = array_sum($ratings)/count($ratings);
                     } else {
-                    	$avg = array_sum($ratings)/1;
+                        $avg = array_sum($ratings)/1;
                     }
                 }
             ?>
-            <li class="product">
-                <div class="top">
-                    <div class="image">
-                        <a href="<?php echo Mage::getBaseUrl().$product->getUrlPath() ?>" title="<?php echo $this->stripTags($this->getImageLabel($product, 'small_image'), null, true) ?>" class="product-image">
+                <li class="product">
+                    <div class="top">
+                        <div class="image">
+                            <a href="<?php echo Mage::getBaseUrl().$product->getUrlPath() ?>" title="<?php echo $this->stripTags($this->getImageLabel($product, 'small_image'), null, true) ?>" class="product-image">
                             <?php 
-                            	$_imgWidth =  $this->getImageWidth();
-                            	$_imgHeight =  $this->getImageHeight(); 
+                                $_imgWidth =  $this->getImageWidth();
+                                $_imgHeight =  $this->getImageHeight(); 
                             ?>
                             <img src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize($_imgWidth, $_imgHeight); ?>"
                                  width="<?php echo $_imgWidth; ?>" height="<?php echo $_imgHeight; ?>"
                                  alt="<?php echo $this->stripTags($this->getImageLabel($product, 'small_image'), null, true) ?>" />
-                        </a>
-                    </div>
-                    <div class="info" onclick="javascript:location.href='<?php echo Mage::getBaseUrl().$product->getUrlPath() ?>'">
-                        <div class="manufacturer"><?php echo $product->getAttributeText('manufacturer'); ?></div>
-                        <div class="product-name">
-                            <span class="a"><?php echo $product->getName() ?>
-                            </span>
+                            </a>
                         </div>
-                        <?php if($avg > 0): ?>
-                            <div class="ratings">
-                                <div class="rating-box">
-                                    <div class="rating" style="width:<?php echo ceil($avg); ?>%;">
+                        <div class="info">
+                            <div class="manufacturer"><?php echo $product->getAttributeText('manufacturer'); ?></div>
+                            <div class="product-name"><a href="<?php echo $product->getProductUrl() ?>"><?php echo Mage::helper('catalog/output')->productAttribute($product, $product->getName(), 'name') ?></a></div>
+                            <?php if($avg > 0): ?>
+                                <div class="ratings">
+                                    <div class="rating-box">
+                                        <div class="rating" style="width:<?php echo ceil($avg); ?>%;">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <span class="rating-value">(
-                            <?php
-                                $value = (float) round($avg/20, 1, PHP_ROUND_HALF_EVEN);
-                                echo sprintf('%.1f',$value);
-                            ?> )</span>
+                                <span class="rating-value">(
+                                <?php
+                                    $value = (float) round($avg/20, 1, PHP_ROUND_HALF_EVEN);
+                                    echo sprintf('%.1f',$value);
+                                ?> )</span>
 
-                        <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="review">
-                    <div class="title">
-                    	<strong><?php echo $review->getTitle(); ?></strong>
+                    <div class="review">
+                        <div class="title"><?php echo $review->getTitle(); ?></div>
+                        <div class="desc"><?php echo $review->getDetail(); ?></div>
                     </div>
-                    <div class="desc">
-                    	<blockquote><?php echo $review->getDetail(); ?></blockquote>
-                    </div>
-                </div>
-            </li>
+                </li>
             <?php endforeach;  ?>
         </ul>
     </div>
 </div>
-
 <?php endif; ?>

@@ -2,7 +2,7 @@
 <widgets>
 
   <customwidgets_youtubevideo type="customwidgets/widget_youtubevideo" module="customwidgets" translate="name description">
-        <name>Youtube Video</name>
+        <name>Video Youtube</name>
         <description>Embed a Youtube video</description>
         <parameters>
             <code translate="label description">
@@ -63,10 +63,10 @@
               <visible>1</visible>
               <label>Template</label>
               <type>select</type>
-              <value>customwidgets/youtube.phtml</value>
+              <value>edirect/customwidgets/youtube.phtml</value>
               <values>
                   <default translate="label">
-                      <value>customwidgets/youtube.phtml</value>
+                      <value>edirect/customwidgets/youtube.phtml</value>
                       <label>Responsive Iframe Template</label>
                   </default>
               </values>
@@ -75,107 +75,79 @@
     </customwidgets_youtubevideo>
 
     <customwidgets_vimeovideo type="customwidgets/widget_vimeovideo" module="customwidgets" translate="name description">
-        <name>Vimeo Video</name>
-        <description>Embed a Vimeo video</description>
-        <parameters>
-            <code translate="label description">
-                <visible>1</visible>
-                <required>1</required>
-                <label>Video Code</label>
-                <type>text</type>
-                <description><![CDATA[<code class="nobr">https://vimeo.com/<strong><em>XXXXXX</em></strong></code>]]></description>
-            </code>
-            <aspect_ratio translate="label">
-                <visible>1</visible>
-                <label>Aspect Ratio</label>
-                <type>select</type>
-                <value>widescreen</value>
-                <values>
-                    <widescreen translate="label">
-                        <value>widescreen</value>
-                        <label>16:9</label>
-                    </widescreen>
-                    <normal translate="label">
-                        <value>normal</value>
-                        <label>4:3</label>
-                    </normal>
-                </values>
-            </aspect_ratio>
-            <autoplay translate="label">
-                <visible>1</visible>
-                <label>Auto-play</label>
-                <type>select</type>
-                <values>
-                    <default translate="label">
-                        <value></value>
-                        <label>No</label>
-                    </default>
-                    <play translate="label">
-                        <value>1</value>
-                        <label>Yes</label>
-                    </play>
-                </values>
-            </autoplay>
-            <loop translate="label">
-                <visible>0</visible>
-                <label>Loop</label>
-                <type>select</type>
-                <values>
-                    <default translate="label">
-                        <value></value>
-                        <label>No</label>
-                    </default>
-                    <play translate="label">
-                        <value>1</value>
-                        <label>Yes</label>
-                    </play>
-                </values>
-            </loop>
-            <template>
-              <required>1</required>
+      <name>Video Vimeo</name>
+      <description>Embed a Vimeo video</description>
+      <parameters>
+          <code translate="label description">
               <visible>1</visible>
-              <label>Template</label>
+              <required>1</required>
+              <label>Video Code</label>
+              <type>text</type>
+              <description><![CDATA[<code class="nobr">https://vimeo.com/<strong><em>XXXXXX</em></strong></code>]]></description>
+          </code>
+          <aspect_ratio translate="label">
+              <visible>1</visible>
+              <label>Aspect Ratio</label>
               <type>select</type>
-              <value>customwidgets/vimeo.phtml</value>
+              <value>widescreen</value>
+              <values>
+                  <widescreen translate="label">
+                      <value>widescreen</value>
+                      <label>16:9</label>
+                  </widescreen>
+                  <normal translate="label">
+                      <value>normal</value>
+                      <label>4:3</label>
+                  </normal>
+              </values>
+          </aspect_ratio>
+          <autoplay translate="label">
+              <visible>1</visible>
+              <label>Auto-play</label>
+              <type>select</type>
               <values>
                   <default translate="label">
-                      <value>customwidgets/vimeo.phtml</value>
-                      <label>Responsive Iframe Template</label>
+                      <value></value>
+                      <label>No</label>
                   </default>
+                  <play translate="label">
+                      <value>1</value>
+                      <label>Yes</label>
+                  </play>
               </values>
-            </template>
-        </parameters>
-    </customwidgets_vimeovideo>
-
-    <!-- <lol type="customwidgets/recentreviews" module="customwidgets" translate="name description">
-        <name>Recent Reviews</name>
-        <description>Show recent reviewed product</description>
-        <parameters>
-          <recent_size>
-            <label>Number of Products to display</label>
-            <visible>1</visible>
+          </autoplay>
+          <loop translate="label">
+              <visible>0</visible>
+              <label>Loop</label>
+              <type>select</type>
+              <values>
+                  <default translate="label">
+                      <value></value>
+                      <label>No</label>
+                  </default>
+                  <play translate="label">
+                      <value>1</value>
+                      <label>Yes</label>
+                  </play>
+              </values>
+          </loop>
+          <template>
             <required>1</required>
-            <value>2</value>
-            <type>text</type>
-          </recent_size>
-          <image_width>
-            <label>Product image width (px)</label>
             <visible>1</visible>
-            <required>1</required>
-            <value>100</value>
-            <type>text</type>
-          </image_width>
-          <image_height>
-            <label>Product image height (px)</label>
-            <visible>1</visible>
-            <required>1</required>
-            <value>100</value>
-            <type>text</type>
-          </image_height>
+            <label>Template</label>
+            <type>select</type>
+            <value>edirect/customwidgets/vimeo.phtml</value>
+            <values>
+                <default translate="label">
+                    <value>edirect/customwidgets/vimeo.phtml</value>
+                    <label>Responsive Iframe Template</label>
+                </default>
+            </values>
+          </template>
       </parameters>
-    </lol> -->
+  </customwidgets_vimeovideo>
 
-  <!-- <recentreview type="customwidgets/widget" translate="name description" module="customwidgets">
+  <recentreview type="customwidgets/widget_recentreviews" translate="name description" module="customwidgets">
       <name>Recent Reviews Products</name>
       <description type="desc">Show recent reviewed product</description>
       <parameters>
@@ -220,66 +192,10 @@
             <visible>1</visible>
             <label>Template</label>
             <type>select</type>
-            <value>customwidgets/widget.phtml</value>
+            <value>edirect/customwidgets/recentreviews.phtml</value>
             <values>
                 <default translate="label">
-                    <value>customwidgets/widget.phtml</value>
-                    <label>Recent Reviewed Template</label>
-                </default>
-            </values>
-          </template>
-      </parameters>
-  </recentreview> -->
-
-  <recentreview type="customwidgets/widget_recentreviews" translate="name description" module="customwidgets">
-      <name>Recent Reviews Products aa</name>
-      <description type="desc">Show recent reviewed product</description>
-      <parameters>
-          <display_mode translate="label">
-              <visible>1</visible>
-              <label>Mode</label>
-              <type>select</type>
-              <values>
-                  <default translate="label">
-                      <value>0</value>
-                      <label>Recent reviewed in active category</label>
-                  </default>
-                  <all translate="label">
-                      <value>1</value>
-                      <label>Recent reviewed in whole shop</label>
-                  </all>
-              </values>
-          </display_mode>
-          <recent_size>
-            <label>Number of Products to display</label>
-            <visible>1</visible>
-            <required>1</required>
-            <value>2</value>
-            <type>text</type>
-          </recent_size>
-          <image_width>
-            <label>Product image width (px)</label>
-            <visible>1</visible>
-            <required>1</required>
-            <value>100</value>
-            <type>text</type>
-          </image_width>
-          <image_height>
-            <label>Product image height (px)</label>
-            <visible>1</visible>
-            <required>1</required>
-            <value>100</value>
-            <type>text</type>
-          </image_height>
-          <template>
-            <required>1</required>
-            <visible>1</visible>
-            <label>Template</label>
-            <type>select</type>
-            <value>customwidgets/recentreviews.phtml</value>
-            <values>
-                <default translate="label">
-                    <value>customwidgets/recentreviews.phtml</value>
+                    <value>edirect/customwidgets/recentreviews.phtml</value>
                     <label>Recent Reviewed Template</label>
                 </default>
             </values>
